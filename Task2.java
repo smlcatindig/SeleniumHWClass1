@@ -12,7 +12,7 @@ get the title of the webPage and confirm that it is  "Web Orders Login"
  */
 public class Task2 {
     public static void main(String[] args) throws InterruptedException {
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         driver.get("http://secure.smartbearsoftware.com/samples/testcomplete11/WebOrders/login.aspx");
         driver.manage().window().maximize();
         Thread.sleep(2000);
@@ -20,11 +20,16 @@ public class Task2 {
         Thread.sleep(2000);
         driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test");
         Thread.sleep(2000);
-        String title=driver.getTitle();
-        System.out.println("The title of the webPage is "+title);
-        Thread.sleep(2000);
-        driver.quit();
+        String title = driver.getTitle();
+        System.out.println(title);
+        if (title.equals("Web Orders Login")) {
+            System.out.println("The Title of webPage: " + title);
+        } else {
+            System.out.println("Incorrect title");
 
-        
+            driver.quit();
+
+
+        }
     }
 }
