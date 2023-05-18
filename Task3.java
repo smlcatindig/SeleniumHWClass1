@@ -29,7 +29,12 @@ what is the reason, will discuss in next lecture
         driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Suzy");
         driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("Catindig");
         driver.findElement(By.xpath("//input[@name='reg_email__']")).sendKeys("catindigsuzanne@gmail.com");
-        driver.findElement(By.xpath("//input[@name='reg_passwd__']")).sendKeys("S098765c");
+        driver.findElement(By.xpath("//input[@name='reg_passwd__']")).sendKeys("S098765&c");
+        driver.findElement(By.xpath("//select[@id='month']")).sendKeys("Nov");
+        driver.findElement(By.xpath("//select[@id='day']")).sendKeys("21");
+        driver.findElement(By.xpath("//select[@id='year']")).sendKeys("1986");
+        driver.findElement(By.xpath("//label[text()='Female']")).click();
+        Thread.sleep(2000);
 
         driver.findElement(By.xpath("//img[@class='_8idr img']")).click();
         Thread.sleep(2000);
